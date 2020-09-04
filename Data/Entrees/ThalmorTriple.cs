@@ -213,7 +213,7 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool egg = true;
-        public bool egg
+        public bool Egg
         {
             get
             {
