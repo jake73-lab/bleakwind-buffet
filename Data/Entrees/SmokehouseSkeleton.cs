@@ -9,12 +9,24 @@ using System.Collections.Generic;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// class describing the smokehouse skeleton
+    /// </summary>
     public class SmokehouseSkeleton
     {
+        /// <summary>
+        /// public field containing the price of the smokehouse skeleton
+        /// </summary>
         public double Price => 5.62;
+        /// <summary>
+        /// public field containing the calories of the smokehouse skeleton
+        /// </summary>
         public uint Calories => 602;
 
         private bool sausageLink = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the smokehouse skeleton has a sausage link
+        /// </summary>
         public bool SausageLink
         {
             get
@@ -37,6 +49,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool egg = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the smokehouse skeleton has an egg
+        /// </summary>
         public bool Egg
         {
             get
@@ -59,6 +74,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool hashBrowns = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the smokehouse skeleton has hash browns
+        /// </summary>
         public bool HashBrowns
         {
             get
@@ -81,6 +99,10 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool pancake = true;
+
+        /// <summary>
+        /// public getter/setter flagging whether or not the smokehouse skeleton has a pancake
+        /// </summary>
         public bool Pancake
         {
             get
@@ -104,11 +126,18 @@ namespace BleakwindBuffet.Data.Entrees
 
         private List<String> specialInstructions = new List<string>();
 
+        /// <summary>
+        /// list of special instructions for preparing the smokehouse skeleton
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
+        /// <summary>
+        /// describes the smokehouse skeleton
+        /// </summary>
+        /// <returns>string description of the smokehouse skeleton</returns>
         public override string ToString()
         {
             return "Smokehouse Skeleton";

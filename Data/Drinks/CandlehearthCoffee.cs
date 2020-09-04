@@ -10,9 +10,15 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// Class to represent Candlehearth Coffee
+    /// </summary>
     public class CandlehearthCoffee
     {
         private Size size = Size.Small;
+        /// <summary>
+        /// public getter/setter for size of coffee
+        /// </summary>
         public Size Size
         {
             get
@@ -26,6 +32,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// public getter for price of coffee, based on size
+        /// </summary>
         public double Price
         {
             get
@@ -45,6 +54,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// public getter for calories of coffee, based on size
+        /// </summary>
         public uint Calories
         {
             get
@@ -65,6 +77,9 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         private bool ice = false;
+        /// <summary>
+        /// public getter/setter flagging whether or not the coffee is iced, false by default
+        /// </summary>
         public bool Ice
         {
             get
@@ -87,6 +102,9 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         private bool roomForCream = false;
+        /// <summary>
+        /// public getter/setter flagging whether or not the coffee has room for cream, false by default
+        /// </summary>
         public bool RoomForCream
         {
             get
@@ -109,6 +127,9 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         private bool decaf = false;
+        /// <summary>
+        /// public getter/setter flagging whether or not the coffee is decaf, false by default
+        /// </summary>
         public bool Decaf
         {
             get
@@ -124,11 +145,18 @@ namespace BleakwindBuffet.Data.Drinks
 
         private List<String> specialInstructions = new List<string>();
 
+        /// <summary>
+        /// public getter for special instructions list
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
+        /// <summary>
+        /// gets information of coffee instance as a string
+        /// </summary>
+        /// <returns>size and whether or not coffee is decaf</returns>
         public override string ToString()
         {
             if(decaf)

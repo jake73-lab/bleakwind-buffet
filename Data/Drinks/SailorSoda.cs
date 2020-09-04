@@ -10,9 +10,15 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// class representing a Sailor Soda
+    /// </summary>
     public class SailorSoda
     {
         private Size size = Size.Small;
+        /// <summary>
+        /// public getter/setter for the Sailor Soda
+        /// </summary>
         public Size Size
         {
             get
@@ -27,6 +33,9 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         private SodaFlavor flavor = SodaFlavor.Cherry;
+        /// <summary>
+        /// public getter/setter for the flavor of the Sailor Soda defaulted to cherry
+        /// </summary>
         public SodaFlavor Flavor
         {
             get
@@ -40,6 +49,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// public getter for the price of the sailor soda, based on size
+        /// </summary>
         public double Price
         {
             get
@@ -59,6 +71,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// public getter for the calories of the sailor soda, based on size
+        /// </summary>
         public uint Calories
         {
             get
@@ -79,6 +94,9 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         private bool ice = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the sailor soda has ice, defaulted to true
+        /// </summary>
         public bool Ice
         {
             get
@@ -103,11 +121,18 @@ namespace BleakwindBuffet.Data.Drinks
 
         private List<String> specialInstructions = new List<string>();
 
+        /// <summary>
+        /// a list of special instructions for preparing the Sailor Soda
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
+        /// <summary>
+        /// returns a description of the sailor soda
+        /// </summary>
+        /// <returns>a string decribing the size and flavor of the soda</returns>
         public override string ToString()
         {
             return $"{size} {flavor} Sailor Soda";

@@ -9,12 +9,24 @@ using System.Collections.Generic;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// class describing the Garden Orc Omlette
+    /// </summary>
     public class GardenOrcOmlette
     {
+        /// <summary>
+        /// public field for the price of the omlette
+        /// </summary>
         public double Price => 4.57;
+        /// <summary>
+        /// public field for the calories of the omlette
+        /// </summary>
         public uint Calories => 404;
 
         private bool broccoli = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the omlette has broccoli in it
+        /// </summary>
         public bool Broccoli
         {
             get
@@ -37,6 +49,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool mushrooms = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the omlette has mushrooms in it
+        /// </summary>
         public bool Mushrooms
         {
             get
@@ -59,6 +74,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool tomato = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the omlette has tomatoes in it
+        /// </summary>
         public bool Tomato
         {
             get
@@ -81,6 +99,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool cheddar = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the omlette has cheddar in it
+        /// </summary>
         public bool Cheddar
         {
             get
@@ -104,11 +125,18 @@ namespace BleakwindBuffet.Data.Entrees
 
         private List<String> specialInstructions = new List<string>();
 
+        /// <summary>
+        /// list containing special instructions for preparing the omlette
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
+        /// <summary>
+        /// describes the omlette
+        /// </summary>
+        /// <returns>string description of the omlette</returns>
         public override string ToString()
         {
             return "Garden Orc Omlette";

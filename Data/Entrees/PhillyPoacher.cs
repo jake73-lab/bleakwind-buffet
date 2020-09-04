@@ -9,12 +9,24 @@ using System.Collections.Generic;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// class representing the philly poacher
+    /// </summary>
     public class PhillyPoacher
     {
+        /// <summary>
+        /// public field containing the price of the philly
+        /// </summary>
         public double Price => 7.23;
+        /// <summary>
+        /// public field containing the calories of the philly
+        /// </summary>
         public uint Calories => 784;
 
         private bool sirloin = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the philly contains sirloin
+        /// </summary>
         public bool Sirloin
         {
             get
@@ -37,6 +49,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool onion = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the philly contains onion
+        /// </summary>
         public bool Onion
         {
             get
@@ -59,6 +74,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool roll = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the philly has a roll
+        /// </summary>
         public bool Roll
         {
             get
@@ -82,11 +100,18 @@ namespace BleakwindBuffet.Data.Entrees
 
         private List<String> specialInstructions = new List<string>();
 
+        /// <summary>
+        /// list of special instructions for preparing the philly
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
+        /// <summary>
+        /// describes the philly
+        /// </summary>
+        /// <returns>string description of the philly</returns>
         public override string ToString()
         {
             return "Philly Poacher";

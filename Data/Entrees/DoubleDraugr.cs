@@ -9,12 +9,24 @@ using System.Collections.Generic;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// class representing the double draugr
+    /// </summary>
     public class DoubleDraugr
     {
+        /// <summary>
+        /// public field for the price of the draugr
+        /// </summary>
         public double Price => 7.32;
+        /// <summary>
+        /// public field for the caloric content of the draugr
+        /// </summary>
         public uint Calories => 843;
 
         private bool bun = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the draugr has a bun
+        /// </summary>
         public bool Bun
         {
             get
@@ -37,6 +49,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool ketchup = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the draugr has ketchup on it
+        /// </summary>
         public bool Ketchup
         {
             get
@@ -59,6 +74,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool mustard = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the draugr has mustard on it
+        /// </summary>
         public bool Mustard
         {
             get
@@ -81,6 +99,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool pickle = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the draugr has pickles on it
+        /// </summary>
         public bool Pickle
         {
             get
@@ -103,6 +124,10 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool cheese = true;
+
+        /// <summary>
+        /// public getter/setter flagging whether or not the draugr has cheese on it
+        /// </summary>
         public bool Cheese
         {
             get
@@ -125,6 +150,10 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool tomato = true;
+
+        /// <summary>
+        /// public getter/setter flagging whether or not the draugr has tomato on it
+        /// </summary>
         public bool Tomato
         {
             get
@@ -147,6 +176,10 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool lettuce = true;
+
+        /// <summary>
+        /// public getter/setter flagging whether or not the draugr has lettuce on it
+        /// </summary>
         public bool Lettuce
         {
             get
@@ -169,6 +202,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool mayo = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the draugr has mayo on it
+        /// </summary>
         public bool Mayo
         {
             get
@@ -192,11 +228,18 @@ namespace BleakwindBuffet.Data.Entrees
 
         private List<String> specialInstructions = new List<string>();
 
+        /// <summary>
+        /// list of instructions for preparing the double draugr
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
+        /// <summary>
+        /// describes the double draugr
+        /// </summary>
+        /// <returns>string description of the double draugr</returns>
         public override string ToString()
         {
             return "Double Draugr";

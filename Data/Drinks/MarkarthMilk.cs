@@ -10,9 +10,15 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// Represents a MakarthMilk
+    /// </summary>
     public class MarkarthMilk
     {
         private Size size = Size.Small;
+        /// <summary>
+        /// public getter/setter for the size of the makarth milk
+        /// </summary>
         public Size Size
         {
             get
@@ -26,6 +32,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// public getter for the price of the makarth milk, dependent on size
+        /// </summary>
         public double Price
         {
             get
@@ -45,6 +54,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// public getter for the calories of the makarth milk, dependent on size
+        /// </summary>
         public uint Calories
         {
             get
@@ -65,6 +77,9 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         private bool ice = false;
+        /// <summary>
+        /// public getter/setter flagging whether or not the milk has ice, false by default
+        /// </summary>
         public bool Ice
         {
             get
@@ -88,11 +103,18 @@ namespace BleakwindBuffet.Data.Drinks
 
         private List<String> specialInstructions = new List<string>();
 
+        /// <summary>
+        /// public getter for the list containing special instructions on the milk
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
+        /// <summary>
+        /// Returns a description of the Makarth Milk
+        /// </summary>
+        /// <returns>String describing milk</returns>
         public override string ToString()
         {
             return $"{size} Makarth Milk";

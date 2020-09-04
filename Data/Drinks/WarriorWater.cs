@@ -10,9 +10,15 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// class describing an instance of warrior water
+    /// </summary>
     public class WarriorWater
     {
         private Size size = Size.Small;
+        /// <summary>
+        /// public getter/setter for the water's size
+        /// </summary>
         public Size Size
         {
             get
@@ -26,6 +32,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// public getter for the price of the water
+        /// </summary>
         public double Price
         {
             get
@@ -34,6 +43,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
+        /// <summary>
+        /// public getter for the calories in the water
+        /// </summary>
         public uint Calories
         {
             get
@@ -43,6 +55,9 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         private bool ice = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the water contains ice 
+        /// </summary>
         public bool Ice
         {
             get
@@ -66,6 +81,9 @@ namespace BleakwindBuffet.Data.Drinks
         }
 
         private bool lemon = false;
+        /// <summary>
+        /// public getter/setter flagging whether or not the water has a lemon
+        /// </summary>
         public bool Lemon
         {
             get
@@ -90,11 +108,18 @@ namespace BleakwindBuffet.Data.Drinks
 
         private List<String> specialInstructions = new List<string>();
 
+        /// <summary>
+        /// public getter for the list of special instructions on preparing the water
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
+        /// <summary>
+        /// a description of the milkshake
+        /// </summary>
+        /// <returns>a string describing the water</returns>
         public override string ToString()
         {
             return $"{size} Warrior Water";

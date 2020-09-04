@@ -9,12 +9,24 @@ using System.Collections.Generic;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// class describing a briarheart burger
+    /// </summary>
     public class BriarheartBurger
     {
+        /// <summary>
+        /// public field holding the price of the burger
+        /// </summary>
         public double Price => 6.32;
+        /// <summary>
+        /// public field containing the caloric content of the burger
+        /// </summary>
         public uint Calories => 732;
 
         private bool bun = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the burger has a bun
+        /// </summary>
         public bool Bun
         {
             get
@@ -37,6 +49,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool ketchup = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the burger has ketchup on it
+        /// </summary>
         public bool Ketchup
         {
             get
@@ -59,6 +74,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool mustard = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the burger has mustard on it
+        /// </summary>
         public bool Mustard
         {
             get
@@ -80,7 +98,11 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
+
         private bool pickle = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the burger has pickles
+        /// </summary>
         public bool Pickle
         {
             get
@@ -103,6 +125,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool cheese = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the burger has cheese on it
+        /// </summary>
         public bool Cheese
         {
             get
@@ -126,11 +151,18 @@ namespace BleakwindBuffet.Data.Entrees
 
         private List<String> specialInstructions = new List<string>();
 
+        /// <summary>
+        /// list of special instructions for preparing the burger
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
+        /// <summary>
+        /// summary of the burger
+        /// </summary>
+        /// <returns>string description of the burger</returns>
         public override string ToString()
         {
             return "Briarheart Burger";

@@ -9,12 +9,24 @@ using System.Collections.Generic;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// class describing the thalmor triple
+    /// </summary>
     public class ThalmorTriple
     {
+        /// <summary>
+        /// public field containing the price of the thalmor triple
+        /// </summary>
         public double Price => 8.32;
+        /// <summary>
+        /// public field containing the calories in the thalmor triple
+        /// </summary>
         public uint Calories => 943;
 
         private bool bun = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the thalmor triple has a bun
+        /// </summary>
         public bool Bun
         {
             get
@@ -37,6 +49,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool ketchup = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the thalmor triple has ketchup
+        /// </summary>
         public bool Ketchup
         {
             get
@@ -59,6 +74,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool mustard = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the thalmor triple has mustard
+        /// </summary>
         public bool Mustard
         {
             get
@@ -81,6 +99,10 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool pickle = true;
+
+        /// <summary>
+        /// public getter/setter flagging whether or not the thalmor triple has pickles
+        /// </summary>
         public bool Pickle
         {
             get
@@ -103,6 +125,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool cheese = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the thalmor triple has cheese
+        /// </summary>
         public bool Cheese
         {
             get
@@ -125,6 +150,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool tomato = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the thalmor triple has tomato
+        /// </summary>
         public bool Tomato
         {
             get
@@ -147,6 +175,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool lettuce = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the thalmor triple has lettuce
+        /// </summary>
         public bool Lettuce
         {
             get
@@ -169,6 +200,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool mayo = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the thalmor triple has mayo
+        /// </summary>
         public bool Mayo
         {
             get
@@ -191,6 +225,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool bacon = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the thalmor triple has bacon
+        /// </summary>
         public bool Bacon
         {
             get
@@ -213,6 +250,9 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         private bool egg = true;
+        /// <summary>
+        /// public getter/setter flagging whether or not the thalmor triple has egg
+        /// </summary>
         public bool Egg
         {
             get
@@ -236,11 +276,18 @@ namespace BleakwindBuffet.Data.Entrees
 
         private List<String> specialInstructions = new List<string>();
 
+        /// <summary>
+        /// list of special instructions for preparing the thalmor triple
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get => new List<string>(specialInstructions);
         }
 
+        /// <summary>
+        /// describes the thalmor triple
+        /// </summary>
+        /// <returns>string description of the thalmor triple</returns>
         public override string ToString()
         {
             return "Thalmor Triple";
