@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using BleakwindBuffet.Data.Enums;
 
-namespace BleakwindBuffet.Data.Drinks
+namespace BleakwindBuffet.Data.Sides
 {
     public class MadOtarGrits
     {
