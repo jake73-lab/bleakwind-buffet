@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Represents a MakarthMilk
     /// </summary>
-    public class MarkarthMilk
+    public class MarkarthMilk : Drink
     {
         private Size size = Size.Small;
         /// <summary>

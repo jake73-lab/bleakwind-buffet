@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// class describing Fried Miraak
     /// </summary>
-    public class FriedMiraak
+    public class FriedMiraak : Side
     {
         private Size size = Size.Small;
         /// <summary>

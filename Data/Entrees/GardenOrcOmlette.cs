@@ -12,7 +12,7 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// class describing the Garden Orc Omlette
     /// </summary>
-    public class GardenOrcOmlette
+    public class GardenOrcOmlette : Entree
     {
         /// <summary>
         /// public field for the price of the omlette

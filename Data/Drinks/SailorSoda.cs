@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// class representing a Sailor Soda
     /// </summary>
-    public class SailorSoda
+    public class SailorSoda : Drink
     {
         private Size size = Size.Small;
         /// <summary>

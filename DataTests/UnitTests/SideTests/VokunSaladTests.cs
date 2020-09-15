@@ -68,5 +68,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             salad.Size = size;
             Assert.Equal(name, salad.ToString());
         }
+
+        [Fact]
+        public void ShouldBeAssignableToAbstractSideClass()
+        {
+            VokunSalad salad = new VokunSalad();
+            Assert.IsAssignableFrom<IOrderItem>(salad);
+            Assert.IsAssignableFrom<Side>(salad);
+        }
     }
 }

@@ -4,7 +4,7 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    public class AretinoAppleJuice
+    public class AretinoAppleJuice : Drink
     {
         private Size size = Size.Small;
         /// <summary>

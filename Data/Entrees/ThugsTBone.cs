@@ -12,7 +12,7 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// class describing the thugs tbone
     /// </summary>
-    public class ThugsTBone
+    public class ThugsTBone : Entree
     {
         /// <summary>
         /// public field containing the price of the thugs t bone

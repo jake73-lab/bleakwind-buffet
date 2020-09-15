@@ -113,5 +113,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             GardenOrcOmlette omlette = new GardenOrcOmlette();
             Assert.Equal("Garden Orc Omlette", omlette.ToString());
         }
+
+        [Fact]
+        public void ShouldBeAssignableToAbstractEntreeClass()
+        {
+            GardenOrcOmlette omlette = new GardenOrcOmlette();
+            Assert.IsAssignableFrom<IOrderItem>(omlette);
+            Assert.IsAssignableFrom<Entree>(omlette);
+        }
     }
 }

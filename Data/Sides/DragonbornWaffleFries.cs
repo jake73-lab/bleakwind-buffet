@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// class describing the Dragonborn Waffle Fries
     /// </summary>
-    public class DragonbornWaffleFries
+    public class DragonbornWaffleFries : Side
     {
         private Size size = Size.Small;
         /// <summary>

@@ -96,5 +96,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             PhillyPoacher philly = new PhillyPoacher();
             Assert.Equal("Philly Poacher", philly.ToString());
         }
+
+        [Fact]
+        public void ShouldBeAssignableToAbstractEntreeClass()
+        {
+            PhillyPoacher philly = new PhillyPoacher();
+            Assert.IsAssignableFrom<IOrderItem>(philly);
+            Assert.IsAssignableFrom<Entree>(philly);
+        }
     }
 }

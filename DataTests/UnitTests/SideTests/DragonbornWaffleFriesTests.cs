@@ -68,5 +68,13 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             fries.Size = size;
             Assert.Equal(name, fries.ToString());
         }
+
+        [Fact]
+        public void ShouldBeAssignableToAbstractSideClass()
+        {
+            DragonbornWaffleFries fry = new DragonbornWaffleFries();
+            Assert.IsAssignableFrom<IOrderItem>(fry);
+            Assert.IsAssignableFrom<Side>(fry);
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class to represent Candlehearth Coffee
     /// </summary>
-    public class CandlehearthCoffee
+    public class CandlehearthCoffee : Drink
     {
         private Size size = Size.Small;
         /// <summary>

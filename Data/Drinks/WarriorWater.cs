@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// class describing an instance of warrior water
     /// </summary>
-    public class WarriorWater
+    public class WarriorWater : Drink
     {
         private Size size = Size.Small;
         /// <summary>
