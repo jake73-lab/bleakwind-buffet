@@ -16,10 +16,10 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Label>Customize Garden Orc Omlette</Label>
-        <CheckBox IsChecked="True" Grid.Row="1">Broccoli</CheckBox>
-        <CheckBox IsChecked="True" Grid.Row="2">Mushrooms</CheckBox>
-        <CheckBox IsChecked="True" Grid.Row="3">Tomato</CheckBox>
-        <CheckBox IsChecked="True" Grid.Row="4">Cheddar</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Broccoli}" Grid.Row="1">Broccoli</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Mushrooms}" Grid.Row="2">Mushrooms</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Tomato}" Grid.Row="3">Tomato</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Cheddar}" Grid.Row="4">Cheddar</CheckBox>
         <Button Click="Complete" Name="completeOmlette" Grid.Row="5">Done</Button>
     </Grid>
 </UserControl>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BleakwindBuffet.Data.Entrees;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -19,10 +20,12 @@ namespace PointOfSale.Entrees
     public partial class SmokehouseCustomization : UserControl
     {
         MainWindow window = new MainWindow();
+        SmokehouseSkeleton skeleton = new SmokehouseSkeleton();
         public SmokehouseCustomization(MainWindow _window)
         {
             InitializeComponent();
             window = _window;
+            DataContext = skeleton;
         }
 
         void Complete(object sender, RoutedEventArgs e)

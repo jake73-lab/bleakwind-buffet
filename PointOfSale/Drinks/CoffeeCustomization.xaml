@@ -18,12 +18,12 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Label>Customize Candlehearth Coffee</Label>
-        <CheckBox IsChecked="True" Grid.Row="1">Small</CheckBox>
-        <CheckBox IsChecked="False" Grid.Row="2">Medium</CheckBox>
-        <CheckBox IsChecked="False" Grid.Row="3">large</CheckBox>
-        <CheckBox IsChecked="False" Grid.Row="4">Ice</CheckBox>
-        <CheckBox IsChecked="False" Grid.Row="5">Cream</CheckBox>
-        <CheckBox IsChecked="False" Grid.Row="6">Decaf</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Size}" Grid.Row="1">Small</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Size}" Grid.Row="2">Medium</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Size}" Grid.Row="3">large</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Ice}" Grid.Row="4">Ice</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Cream}" Grid.Row="5">Cream</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Decaf}" Grid.Row="6">Decaf</CheckBox>
         <Button Click="Complete" Name="completeCoffee" Grid.Row="7">Done</Button>
     </Grid>
 </UserControl>

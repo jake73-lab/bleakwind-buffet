@@ -22,16 +22,16 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Label>Customize Sailor Soda</Label>
-        <CheckBox IsChecked="True" Grid.Row="1">Small</CheckBox>
-        <CheckBox IsChecked="False" Grid.Row="2">Medium</CheckBox>
-        <CheckBox IsChecked="False" Grid.Row="3">large</CheckBox>
-        <CheckBox IsChecked="True" Grid.Row="4">Cherry</CheckBox>
-        <CheckBox IsChecked="False" Grid.Row="5">Blackberry</CheckBox>
-        <CheckBox IsChecked="False" Grid.Row="6">Grapefruit</CheckBox>
-        <CheckBox IsChecked="False" Grid.Row="7">Lemon</CheckBox>
-        <CheckBox IsChecked="False" Grid.Row="8">Watermelon</CheckBox>
-        <CheckBox IsChecked="False" Grid.Row="9">Peach</CheckBox>
-        <CheckBox IsChecked="True" Grid.Row="10">Ice</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Size}" Grid.Row="1">Small</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Size}" Grid.Row="2">Medium</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Size}" Grid.Row="3">large</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Flavor}" Grid.Row="4">Cherry</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Flavor}" Grid.Row="5">Blackberry</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Flavor}" Grid.Row="6">Grapefruit</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Flavor}" Grid.Row="7">Lemon</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Flavor}" Grid.Row="8">Watermelon</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Flavor}" Grid.Row="9">Peach</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Flavor}" Grid.Row="10">Ice</CheckBox>
         <Button Click="Complete" Name="completeSoda" Grid.Row="11">Done</Button>
     </Grid>
 </UserControl>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BleakwindBuffet.Data.Entrees;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -19,10 +20,12 @@ namespace PointOfSale.Entrees
     public partial class DoubleDraugrCustomization : UserControl
     {
         MainWindow window = new MainWindow();
+        DoubleDraugr draugr = new DoubleDraugr();
         public DoubleDraugrCustomization(MainWindow _window)
         {
             InitializeComponent();
             window = _window;
+            DataContext = draugr;
         }
 
         void Complete(object sender, RoutedEventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BleakwindBuffet.Data.Entrees;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -19,10 +20,12 @@ namespace PointOfSale.Entrees
     public partial class BriarheartBurgerCustomization : UserControl
     {
         MainWindow window = new MainWindow();
+        private BriarheartBurger burger = new BriarheartBurger();
         public BriarheartBurgerCustomization(MainWindow _window)
         {
             InitializeComponent();
             window = _window;
+            DataContext = burger;
         }
 
         void Complete(Object sender, RoutedEventArgs e)

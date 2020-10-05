@@ -16,9 +16,9 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Label>Customize Philly Poacher</Label>
-        <CheckBox IsChecked="True" Grid.Row="1">Sirloin</CheckBox>
-        <CheckBox IsChecked="True" Grid.Row="2">Onion</CheckBox>
-        <CheckBox IsChecked="True" Grid.Row="3">Roll</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Sirloin}" Grid.Row="1">Sirloin</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Onion}" Grid.Row="2">Onion</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Roll}" Grid.Row="3">Roll</CheckBox>
         <Button Click="Complete" Name="completePhilly" Grid.Row="5">Done</Button>
     </Grid>
 </UserControl>

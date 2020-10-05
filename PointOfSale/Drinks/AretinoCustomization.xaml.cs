@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BleakwindBuffet.Data.Drinks;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -19,10 +20,12 @@ namespace PointOfSale.Drinks
     public partial class AretinoCustomization : UserControl
     {
         MainWindow window = new MainWindow();
+        AretinoAppleJuice juice = new AretinoAppleJuice();
         public AretinoCustomization(MainWindow _window)
         {
             InitializeComponent();
             window = _window;
+            DataContext = juice;
         }
 
         void Complete(object sender, RoutedEventArgs e)

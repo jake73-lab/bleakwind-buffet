@@ -16,10 +16,10 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Label>Customize Smokehouse Skeleton</Label>
-        <CheckBox IsChecked="True" Grid.Row="1">Sausage Link</CheckBox>
-        <CheckBox IsChecked="True" Grid.Row="2">Egg</CheckBox>
-        <CheckBox IsChecked="True" Grid.Row="3">Hash Browns</CheckBox>
-        <CheckBox IsChecked="True" Grid.Row="4">Pancake</CheckBox>
+        <CheckBox IsChecked="{Binding Path=SausageLink}" Grid.Row="1">Sausage Link</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Egg}" Grid.Row="2">Egg</CheckBox>
+        <CheckBox IsChecked="{Binding Path=HashBrowns}" Grid.Row="3">Hash Browns</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Pancake}" Grid.Row="4">Pancake</CheckBox>
         <Button Click="Complete" Name="completeSmokehouse" Grid.Row="5">Done</Button>
     </Grid>
 </UserControl>

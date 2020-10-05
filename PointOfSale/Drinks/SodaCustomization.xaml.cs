@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BleakwindBuffet.Data.Drinks;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -19,10 +20,12 @@ namespace PointOfSale.Drinks
     public partial class SodaCustomization : UserControl
     {
         MainWindow window = new MainWindow();
+        SailorSoda soda = new SailorSoda();
         public SodaCustomization(MainWindow _window)
         {
             InitializeComponent();
             window = _window;
+            DataContext = soda;
         }
 
         void Complete(object sender, RoutedEventArgs e)

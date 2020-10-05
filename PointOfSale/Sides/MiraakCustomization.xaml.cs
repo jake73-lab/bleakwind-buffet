@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BleakwindBuffet.Data.Sides;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -19,10 +20,12 @@ namespace PointOfSale.Sides
     public partial class MiraakCustomization : UserControl
     {
         MainWindow window = new MainWindow();
+        FriedMiraak miraak = new FriedMiraak();
         public MiraakCustomization(MainWindow _window)
         {
             InitializeComponent();
             window = _window;
+            DataContext = miraak;
         }
 
         void Complete(object sender, RoutedEventArgs e)

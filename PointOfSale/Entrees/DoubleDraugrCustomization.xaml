@@ -19,14 +19,14 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Label>Customize Double Draugr</Label>
-        <CheckBox IsChecked="True" Grid.Row="1">Bun</CheckBox>
-        <CheckBox IsChecked="True" Grid.Row="2">Ketchup</CheckBox>
-        <CheckBox IsChecked="True" Grid.Row="3">Mustard</CheckBox>
-        <CheckBox IsChecked="True" Grid.Row="4">Pickle</CheckBox>
-        <CheckBox IsChecked="True" Grid.Row="5">Cheese</CheckBox>
-        <CheckBox IsChecked="True" Grid.Row="6">Tomato</CheckBox>
-        <CheckBox IsChecked="True" Grid.Row="7">Lettuce</CheckBox>
-        <CheckBox IsChecked="True" Grid.Row="8">Mayo</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Bun}" Grid.Row="1">Bun</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Ketchup}" Grid.Row="2">Ketchup</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Mustard}" Grid.Row="3">Mustard</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Pickle}" Grid.Row="4">Pickle</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Cheese}" Grid.Row="5">Cheese</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Tomato}" Grid.Row="6">Tomato</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Lettuce}" Grid.Row="7">Lettuce</CheckBox>
+        <CheckBox IsChecked="{Binding Path=Mayo}" Grid.Row="8">Mayo</CheckBox>
         <Button Name="completeDraugr" Click="Complete" Grid.Row="9">Done</Button>
     </Grid>
 </UserControl>
