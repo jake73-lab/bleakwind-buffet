@@ -121,5 +121,70 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.IsAssignableFrom<IOrderItem>(skeleton);
             Assert.IsAssignableFrom<Entree>(skeleton);
         }
+
+        [Fact]
+        public void ChangingSausageLinkNotifiesSausageLinkProperty()
+        {
+            SmokehouseSkeleton skeleton = new SmokehouseSkeleton();
+
+            Assert.PropertyChanged(skeleton, "Sausage Link", () =>
+            {
+                skeleton.SausageLink = true;
+            });
+
+            Assert.PropertyChanged(skeleton, "Sausage Link", () =>
+            {
+                skeleton.SausageLink = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingEggNotifiesEggProperty()
+        {
+            SmokehouseSkeleton skeleton = new SmokehouseSkeleton();
+
+            Assert.PropertyChanged(skeleton, "Egg", () =>
+            {
+                skeleton.Egg = true;
+            });
+
+            Assert.PropertyChanged(skeleton, "Egg", () =>
+            {
+                skeleton.Egg = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingPancakeNotifiesPancakeProperty()
+        {
+            SmokehouseSkeleton skeleton = new SmokehouseSkeleton();
+
+            Assert.PropertyChanged(skeleton, "Pancake", () =>
+            {
+                skeleton.Pancake = true;
+            });
+
+            Assert.PropertyChanged(skeleton, "Pancake", () =>
+            {
+                skeleton.Pancake = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingHashBrownsNotifiesHashBrownsProperty()
+        {
+            SmokehouseSkeleton skeleton = new SmokehouseSkeleton();
+
+            Assert.PropertyChanged(skeleton, "Hash Browns", () =>
+            {
+                skeleton.HashBrowns = true;
+            });
+
+            Assert.PropertyChanged(skeleton, "Hash Browns", () =>
+            {
+                skeleton.HashBrowns = false;
+            });
+        }
+
     }
 }

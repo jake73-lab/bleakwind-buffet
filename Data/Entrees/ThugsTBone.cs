@@ -6,13 +6,14 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// class describing the thugs tbone
     /// </summary>
-    public class ThugsTBone : Entree
+    public class ThugsTBone : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// public field containing the price of the thugs t bone
@@ -24,6 +25,9 @@ namespace BleakwindBuffet.Data.Entrees
         public uint Calories => 982;
 
         private List<String> specialInstructions = new List<string>();
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// list of special instructions for preparing the thugs tbone
         /// </summary>

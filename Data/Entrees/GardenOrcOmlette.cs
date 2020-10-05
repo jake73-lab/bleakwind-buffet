@@ -6,13 +6,14 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// class describing the Garden Orc Omlette
     /// </summary>
-    public class GardenOrcOmlette : Entree
+    public class GardenOrcOmlette : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// public field for the price of the omlette
@@ -45,6 +46,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold Broccoli");
                 }
                 broccoli = value;
+                InvokePropertyChanged("Broccoli");
             }
         }
 
@@ -70,6 +72,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold mushrooms");
                 }
                 mushrooms = value;
+                InvokePropertyChanged("Mushrooms");
             }
         }
 
@@ -95,6 +98,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold tomato");
                 }
                 tomato = value;
+                InvokePropertyChanged("Tomato");
             }
         }
 
@@ -120,10 +124,18 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold cheddar");
                 }
                 cheddar = value;
+                InvokePropertyChanged("Cheddar");
             }
         }
 
         private List<String> specialInstructions = new List<string>();
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void InvokePropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
 
         /// <summary>
         /// list containing special instructions for preparing the omlette

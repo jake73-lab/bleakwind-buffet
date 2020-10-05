@@ -6,13 +6,14 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// class describing a briarheart burger
     /// </summary>
-    public class BriarheartBurger : Entree
+    public class BriarheartBurger : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// public field holding the price of the burger
@@ -45,6 +46,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold bun");
                 }
                 bun = value;
+                InvokePropertyChanged("Bun");
             }
         }
 
@@ -70,6 +72,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold ketchup");
                 }
                 ketchup = value;
+                InvokePropertyChanged("Ketchup");
             }
         }
 
@@ -95,6 +98,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold mustard");
                 }
                 mustard = value;
+                InvokePropertyChanged("Mustard");
             }
         }
 
@@ -121,6 +125,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold pickle");
                 }
                 pickle = value;
+                InvokePropertyChanged("Pickle");
             }
         }
 
@@ -146,10 +151,18 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold cheese");
                 }
                 cheese = value;
+                InvokePropertyChanged("Cheese");
             }
         }
 
         private List<String> specialInstructions = new List<string>();
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void InvokePropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
 
         /// <summary>
         /// list of special instructions for preparing the burger

@@ -6,13 +6,14 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// class describing the thalmor triple
     /// </summary>
-    public class ThalmorTriple : Entree
+    public class ThalmorTriple : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// public field containing the price of the thalmor triple
@@ -121,6 +122,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold pickle");
                 }
                 pickle = value;
+                InvokePropertyChanged("Pickle");
             }
         }
 
@@ -146,6 +148,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold cheese");
                 }
                 cheese = value;
+                InvokePropertyChanged("Cheese");
             }
         }
 
@@ -171,6 +174,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold tomato");
                 }
                 tomato = value;
+                InvokePropertyChanged("Tomato");
             }
         }
 
@@ -196,6 +200,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold lettuce");
                 }
                 lettuce = value;
+                InvokePropertyChanged("Lettuce");
             }
         }
 
@@ -221,6 +226,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold mayo");
                 }
                 mayo = value;
+                InvokePropertyChanged("Mayo");
             }
         }
 
@@ -246,6 +252,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold bacon");
                 }
                 bacon = value;
+                InvokePropertyChanged("Bacon");
             }
         }
 
@@ -271,10 +278,17 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold egg");
                 }
                 egg = value;
+                InvokePropertyChanged("Egg");
             }
         }
 
         private List<String> specialInstructions = new List<string>();
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void InvokePropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
 
         /// <summary>
         /// list of special instructions for preparing the thalmor triple

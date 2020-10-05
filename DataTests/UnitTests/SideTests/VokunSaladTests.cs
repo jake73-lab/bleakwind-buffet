@@ -76,5 +76,26 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.IsAssignableFrom<IOrderItem>(salad);
             Assert.IsAssignableFrom<Side>(salad);
         }
+
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            VokunSalad salad = new VokunSalad();
+
+            Assert.PropertyChanged(salad, "Size", () =>
+            {
+                salad.Size = Size.Small;
+            });
+
+            Assert.PropertyChanged(salad, "Size", () =>
+            {
+                salad.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(salad, "Size", () =>
+            {
+                salad.Size = Size.Large;
+            });
+        }
     }
 }

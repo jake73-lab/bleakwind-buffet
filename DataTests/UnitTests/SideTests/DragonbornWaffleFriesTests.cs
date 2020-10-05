@@ -76,5 +76,26 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.IsAssignableFrom<IOrderItem>(fry);
             Assert.IsAssignableFrom<Side>(fry);
         }
+
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            DragonbornWaffleFries fries = new DragonbornWaffleFries();
+
+            Assert.PropertyChanged(fries, "Size", () =>
+            {
+                fries.Size = Size.Small;
+            });
+
+            Assert.PropertyChanged(fries, "Size", () =>
+            {
+                fries.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(fries, "Size", () =>
+            {
+                fries.Size = Size.Large;
+            });
+        }
     }
 }

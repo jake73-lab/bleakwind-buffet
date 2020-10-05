@@ -139,5 +139,86 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.IsAssignableFrom<IOrderItem>(burger);
             Assert.IsAssignableFrom<Entree>(burger);
         }
+
+        [Fact]
+        public void ChangingBunNotifiesBunProperty()
+        {
+            BriarheartBurger burger = new BriarheartBurger();
+
+            Assert.PropertyChanged(burger, "Bun", () =>
+            {
+                burger.Bun = true;
+            });
+
+            Assert.PropertyChanged(burger, "Ice", () =>
+            {
+                burger.Bun = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingKetchupNotifiesKetchupProperty()
+        {
+            BriarheartBurger burger = new BriarheartBurger();
+
+            Assert.PropertyChanged(burger, "Ketchup", () =>
+            {
+                burger.Ketchup = true;
+            });
+
+            Assert.PropertyChanged(burger, "Ketchup", () =>
+            {
+                burger.Ketchup = false;
+            });
+        }
+
+
+        [Fact]
+        public void ChangingMustardNotifiesMustardProperty()
+        {
+            BriarheartBurger burger = new BriarheartBurger();
+
+            Assert.PropertyChanged(burger, "Mustard", () =>
+            {
+                burger.Mustard = true;
+            });
+
+            Assert.PropertyChanged(burger, "Mustard", () =>
+            {
+                burger.Mustard = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingPickleNotifiesPickleProperty()
+        {
+            BriarheartBurger burger = new BriarheartBurger();
+
+            Assert.PropertyChanged(burger, "Pickle", () =>
+            {
+                burger.Pickle = true;
+            });
+
+            Assert.PropertyChanged(burger, "Pickle", () =>
+            {
+                burger.Pickle = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingCheeeseNotifiesCheeseProperty()
+        {
+            BriarheartBurger burger = new BriarheartBurger();
+
+            Assert.PropertyChanged(burger, "Cheese", () =>
+            {
+                burger.Cheese = true;
+            });
+
+            Assert.PropertyChanged(burger, "Mustard", () =>
+            {
+                burger.Cheese = false;
+            });
+        }
     }
 }

@@ -77,5 +77,26 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             Assert.IsAssignableFrom<IOrderItem>(miraak);
             Assert.IsAssignableFrom<Side>(miraak);
         }
+
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            FriedMiraak miraak = new FriedMiraak();
+
+            Assert.PropertyChanged(miraak, "Size", () =>
+            {
+                miraak.Size = Size.Small;
+            });
+
+            Assert.PropertyChanged(miraak, "Size", () =>
+            {
+                miraak.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(miraak, "Size", () =>
+            {
+                miraak.Size = Size.Large;
+            });
+        }
     }
 }

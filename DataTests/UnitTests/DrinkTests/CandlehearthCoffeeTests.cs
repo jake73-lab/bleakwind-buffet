@@ -138,5 +138,74 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.IsAssignableFrom<IOrderItem>(coffee);
             Assert.IsAssignableFrom<Drink>(coffee);
         }
+
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            CandlehearthCoffee coffee = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(coffee, "Size", () =>
+            {
+                coffee.Size = Size.Small;
+            });
+
+            Assert.PropertyChanged(coffee, "Size", () =>
+            {
+                coffee.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(coffee, "Size", () =>
+            {
+                coffee.Size = Size.Large;
+            });
+        }
+
+        [Fact]
+        public void ChangingCreamNotifiesCreamProperty()
+        {
+            CandlehearthCoffee coffee = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(coffee, "Cream", () =>
+            {
+                coffee.RoomForCream = true;
+            });
+
+            Assert.PropertyChanged(coffee, "Cream", () =>
+            {
+                coffee.RoomForCream = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingDecafNotifiesDecafProperty()
+        {
+            CandlehearthCoffee coffee = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(coffee, "Decaf", () =>
+            {
+                coffee.Decaf = true;
+            });
+
+            Assert.PropertyChanged(coffee, "Decaf", () =>
+            {
+                coffee.Decaf = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+            CandlehearthCoffee coffee = new CandlehearthCoffee();
+
+            Assert.PropertyChanged(coffee, "Ice", () =>
+            {
+                coffee.Ice = true;
+            });
+
+            Assert.PropertyChanged(coffee, "Ice", () =>
+            {
+                coffee.Ice = false;
+            });
+        }
     }
 }

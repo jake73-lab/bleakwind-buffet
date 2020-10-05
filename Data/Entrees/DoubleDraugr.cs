@@ -6,13 +6,14 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// class representing the double draugr
     /// </summary>
-    public class DoubleDraugr : Entree
+    public class DoubleDraugr : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// public field for the price of the draugr
@@ -45,6 +46,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold bun");
                 }
                 bun = value;
+                InvokePropertyChanged("Bun");
             }
         }
 
@@ -70,6 +72,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold ketchup");
                 }
                 ketchup = value;
+                InvokePropertyChanged("Ketchup");
             }
         }
 
@@ -95,6 +98,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold mustard");
                 }
                 mustard = value;
+                InvokePropertyChanged("Mustard");
             }
         }
 
@@ -120,6 +124,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold pickle");
                 }
                 pickle = value;
+                InvokePropertyChanged("Pickle");
             }
         }
 
@@ -146,6 +151,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold cheese");
                 }
                 cheese = value;
+                InvokePropertyChanged("Cheese");
             }
         }
 
@@ -172,6 +178,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold tomato");
                 }
                 tomato = value;
+                InvokePropertyChanged("Tomato");
             }
         }
 
@@ -198,6 +205,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold lettuce");
                 }
                 lettuce = value;
+                InvokePropertyChanged("Lettuce");
             }
         }
 
@@ -223,10 +231,18 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold mayo");
                 }
                 mayo = value;
+                InvokePropertyChanged("Mayo");
             }
         }
 
         private List<String> specialInstructions = new List<string>();
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void InvokePropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
 
         /// <summary>
         /// list of instructions for preparing the double draugr

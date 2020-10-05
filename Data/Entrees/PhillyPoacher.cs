@@ -6,13 +6,14 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// class representing the philly poacher
     /// </summary>
-    public class PhillyPoacher : Entree
+    public class PhillyPoacher : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// public field containing the price of the philly
@@ -45,6 +46,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold Sirloin");
                 }
                 sirloin = value;
+                InvokePropertyChanged("Sirloin");
             }
         }
 
@@ -70,6 +72,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold onion");
                 }
                 onion = value;
+                InvokePropertyChanged("Onion");
             }
         }
 
@@ -95,10 +98,18 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold roll");
                 }
                 roll = value;
+                InvokePropertyChanged("Roll");
             }
         }
 
         private List<String> specialInstructions = new List<string>();
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void InvokePropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
 
         /// <summary>
         /// list of special instructions for preparing the philly

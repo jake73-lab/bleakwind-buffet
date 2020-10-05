@@ -6,13 +6,14 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// class describing the smokehouse skeleton
     /// </summary>
-    public class SmokehouseSkeleton : Entree
+    public class SmokehouseSkeleton : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// public field containing the price of the smokehouse skeleton
@@ -45,6 +46,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold sausage link");
                 }
                 sausageLink = value;
+                InvokePropertyChanged("Sausage Link");
             }
         }
 
@@ -70,6 +72,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold egg");
                 }
                 egg = value;
+                InvokePropertyChanged("Egg");
             }
         }
 
@@ -95,6 +98,7 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold hash browns");
                 }
                 hashBrowns = value;
+                InvokePropertyChanged("Hash Browns");
             }
         }
 
@@ -121,10 +125,18 @@ namespace BleakwindBuffet.Data.Entrees
                     specialInstructions.Remove("Hold pancake");
                 }
                 pancake = value;
+                InvokePropertyChanged("Pancake");
             }
         }
 
         private List<String> specialInstructions = new List<string>();
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void InvokePropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
 
         /// <summary>
         /// list of special instructions for preparing the smokehouse skeleton

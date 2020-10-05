@@ -121,5 +121,69 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.IsAssignableFrom<IOrderItem>(omlette);
             Assert.IsAssignableFrom<Entree>(omlette);
         }
+
+        [Fact]
+        public void ChangingBroccoliNotifiesBroccoliProperty()
+        {
+            GardenOrcOmlette omlette = new GardenOrcOmlette();
+
+            Assert.PropertyChanged(omlette, "Broccoli", () =>
+            {
+                omlette.Broccoli = true;
+            });
+
+            Assert.PropertyChanged(omlette, "Broccoli", () =>
+            {
+                omlette.Broccoli = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingMushroomsNotifiesBroccoliProperty()
+        {
+            GardenOrcOmlette omlette = new GardenOrcOmlette();
+
+            Assert.PropertyChanged(omlette, "Mushrooms", () =>
+            {
+                omlette.Mushrooms = true;
+            });
+
+            Assert.PropertyChanged(omlette, "Mushrooms", () =>
+            {
+                omlette.Mushrooms = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingTomatoNotifiesTomatoProperty()
+        {
+            GardenOrcOmlette omlette = new GardenOrcOmlette();
+
+            Assert.PropertyChanged(omlette, "Tomato", () =>
+            {
+                omlette.Tomato = true;
+            });
+
+            Assert.PropertyChanged(omlette, "Tomato", () =>
+            {
+                omlette.Tomato = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingCheddarNotifiesCheddarProperty()
+        {
+            GardenOrcOmlette omlette = new GardenOrcOmlette();
+
+            Assert.PropertyChanged(omlette, "Cheddar", () =>
+            {
+                omlette.Cheddar = true;
+            });
+
+            Assert.PropertyChanged(omlette, "Cheddar", () =>
+            {
+                omlette.Cheddar = false;
+            });
+        }
     }
 }

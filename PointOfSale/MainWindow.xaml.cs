@@ -30,7 +30,7 @@ namespace PointOfSale
         public List<IOrderItem> order = new List<IOrderItem>();
         public ItemComponent items = new ItemComponent();
 
-        public MainWindow()
+        public MainWindow() 
         {
             InitializeComponent();
             items.Selection += HandleItem;

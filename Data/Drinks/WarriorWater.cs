@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
@@ -13,7 +14,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// class describing an instance of warrior water
     /// </summary>
-    public class WarriorWater : Drink
+    public class WarriorWater : Drink, INotifyPropertyChanged
     {
         private Size size = Size.Small;
         /// <summary>
@@ -29,6 +30,7 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 size = value;
+                InvokePropertyChanged("Size");
             }
         }
 
@@ -77,6 +79,7 @@ namespace BleakwindBuffet.Data.Drinks
                     specialInstructions.Remove("Hold ice");
                 }
                 ice = value;
+                InvokePropertyChanged("Ice");
             }
         }
 
@@ -103,10 +106,18 @@ namespace BleakwindBuffet.Data.Drinks
                     specialInstructions.Remove("add lemon");
                 }
                 lemon = value;
+                InvokePropertyChanged("Lemon");
             }
         }
 
         private List<String> specialInstructions = new List<string>();
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void InvokePropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
 
         /// <summary>
         /// public getter for the list of special instructions on preparing the water

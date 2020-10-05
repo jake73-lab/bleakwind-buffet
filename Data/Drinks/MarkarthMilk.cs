@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
@@ -13,7 +14,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Represents a MakarthMilk
     /// </summary>
-    public class MarkarthMilk : Drink
+    public class MarkarthMilk : Drink, INotifyPropertyChanged
     {
         private Size size = Size.Small;
         /// <summary>
@@ -29,6 +30,7 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 size = value;
+                InvokePropertyChanged("Size");
             }
         }
 
@@ -98,10 +100,18 @@ namespace BleakwindBuffet.Data.Drinks
                     specialInstructions.Remove("Add ice");
                 }
                 ice = value;
+                InvokePropertyChanged("Ice");
             }
         }
 
         private List<String> specialInstructions = new List<string>();
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void InvokePropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
 
         /// <summary>
         /// public getter for the list containing special instructions on the milk

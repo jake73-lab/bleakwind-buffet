@@ -9,6 +9,7 @@ using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Sides;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
@@ -75,6 +76,27 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             MadOtarGrits grits = new MadOtarGrits();
             Assert.IsAssignableFrom<IOrderItem>(grits);
             Assert.IsAssignableFrom<Side>(grits);
+        }
+
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+            MadOtarGrits grits = new MadOtarGrits();
+
+            Assert.PropertyChanged(grits, "Size", () =>
+            {
+                grits.Size = Size.Small;
+            });
+
+            Assert.PropertyChanged(grits, "Size", () =>
+            {
+                grits.Size = Size.Medium;
+            });
+
+            Assert.PropertyChanged(grits, "Size", () =>
+            {
+                grits.Size = Size.Large;
+            });
         }
     }
 }
