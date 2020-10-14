@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,9 +21,21 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderComponent : UserControl
     {
+        List<object> selected;
+
         public OrderComponent()
         {
             InitializeComponent();
+        }
+
+        private void RemoveItem_Click(object sender, RoutedEventArgs e)
+        {
+            IOrderItem item = (IOrderItem)itemsListView.SelectedItem;
+            MainWindow.orderContext.Remove((IOrderItem) item);
+        }
+
+        private void itemsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
         }
     }
 }

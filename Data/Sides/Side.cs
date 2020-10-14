@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Sides
 {
@@ -12,5 +13,7 @@ namespace BleakwindBuffet.Data.Sides
         public Side()
         {
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

@@ -19,6 +19,7 @@ using System.Windows.Shapes;
 using PointOfSale.Entrees;
 using PointOfSale.Drinks;
 using PointOfSale.Sides;
+using BleakwindBuffet.Data;
 
 namespace PointOfSale
 {
@@ -27,6 +28,7 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static Order orderContext = new Order();
         public List<IOrderItem> order = new List<IOrderItem>();
         public ItemComponent items = new ItemComponent();
 
@@ -35,6 +37,7 @@ namespace PointOfSale
             InitializeComponent();
             items.Selection += HandleItem;
             menuContainer.Child = items;
+            DataContext = orderContext;
         }
 
         void HandleItem(object sender, SelectionHandler e)

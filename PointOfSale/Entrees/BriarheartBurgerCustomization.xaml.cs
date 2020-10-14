@@ -31,6 +31,7 @@ namespace PointOfSale.Entrees
         void Complete(Object sender, RoutedEventArgs e)
         {
             window.menuContainer.Child = window.items;
+            MainWindow.orderContext.Add(burger);
         }
     }
 }

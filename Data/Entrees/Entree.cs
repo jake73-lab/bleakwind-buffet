@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+
 namespace BleakwindBuffet.Data.Entrees
 {
     public class Entree : IOrderItem
@@ -11,5 +13,7 @@ namespace BleakwindBuffet.Data.Entrees
         public Entree()
         {
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

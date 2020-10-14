@@ -16,7 +16,7 @@
         </Border>
 
         <Border Name="ticketContainer"  Grid.Column="1">
-            <local:OrderComponent/>
+            <local:OrderComponent x:Name="Ticket" />
         </Border>
     </Grid>
 </Window>

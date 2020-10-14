@@ -11,7 +11,32 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Name="title" Grid.Column="1">Order</TextBlock>
-        <TextBlock Name="orderList" Grid.Column="1" Grid.Row="1"></TextBlock>
+        
+        <StackPanel Grid.Column="1">
+            <TextBlock Name="title">Order</TextBlock>
+            <ListView Name="itemsListView" SelectionChanged="itemsListView_SelectionChanged" ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock>
+                                <Run Text="{Binding Mode=OneWay}"/>
+                                <Run Text="s" />
+                                <Run Text="{Binding Path=Price, Mode=OneWay}"/>
+                            </TextBlock>
+                            <ListView Name="instructions" ItemsSource="{Binding Path=SpecialInstructions}"/>
+                            <Button Name="RemoveItem" Click="RemoveItem_Click">
+                                Remove
+                            </Button>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <TextBlock Name="numberLabel" Text="{Binding Path=OrderNumber}"/>
+            <TextBlock Name="subtotalLabel" Text="{Binding Path=Subtotal}"/>
+            <TextBlock Name="taxLabel" Text="{Binding Path=Tax}"/>
+            <TextBlock Name="totalLabel" Text="{Binding Path=Total}"/>
+        </StackPanel>
     </Grid>
 </UserControl>

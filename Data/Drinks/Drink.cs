@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
@@ -14,5 +15,7 @@ namespace BleakwindBuffet.Data.Drinks
         public Drink()
         {
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
