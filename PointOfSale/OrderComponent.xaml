@@ -37,6 +37,12 @@
             <TextBlock Name="subtotalLabel" Text="{Binding Path=Subtotal}"/>
             <TextBlock Name="taxLabel" Text="{Binding Path=Tax}"/>
             <TextBlock Name="totalLabel" Text="{Binding Path=Total}"/>
+            <Button Name="completeOrderButton" Click="completeOrderButton_Click">
+                Complete Order
+            </Button>
+            <Button Name="cancelOrderButton" Click="cancelOrderButton_Click">
+                Cancel Order
+            </Button>
         </StackPanel>
     </Grid>
 </UserControl>

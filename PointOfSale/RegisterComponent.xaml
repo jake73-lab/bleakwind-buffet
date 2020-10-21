@@ -1,0 +1,182 @@
+﻿<UserControl x:Class="PointOfSale.RegisterComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="From Customer" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <TextBlock Text="$100" Name="hundredBills" Grid.Row="1" Grid.Column="0" Background="LightGreen" Margin="5" TextAlignment="Center" Padding="8"/>
+        <Button Name="addHundred" FontSize="30" Margin="5" Grid.Row="1" Grid.Column="1" Click="addHundred_Click">
+            +
+        </Button>
+        <TextBlock Text="{Binding Path=hundredsCount}" Name="hundredCount" Grid.Row="1" Grid.Column="2" Background="Gray" Margin="10"/>
+        <Button Name="subHundred" FontSize="30" Margin="5" Grid.Row="1" Grid.Column="3" Click="subHundred_Click">
+            -
+        </Button>
+        <TextBlock Text="0" Name="hundredDue" Grid.Row="1" Grid.Column="4" Background="Gray" Margin="10"/>
+
+        <TextBlock Text="$50" Name="fiftyBills" Grid.Row="2" Grid.Column="0" Background="LightGreen" Margin="5" TextAlignment="Center" Padding="8"/>
+        <Button Name="addFifty" FontSize="30" Margin="5" Grid.Row="2" Grid.Column="1">
+            +
+        </Button>
+        <TextBlock Text="{Binding Path=fiftyCount}" Name="fiftyCount" Grid.Row="2" Grid.Column="2" Background="Gray" Margin="10"/>
+        <Button Name="subFifty" FontSize="30" Margin="5" Grid.Row="2" Grid.Column="3">
+            -
+        </Button>
+        <TextBlock Text="0" Name="fiftyDue" Grid.Row="2" Grid.Column="4" Background="Gray" Margin="10"/>
+
+        <TextBlock Text="$20" Name="twentyBills" Grid.Row="3" Grid.Column="0" Background="LightGreen" Margin="5" TextAlignment="Center" Padding="8"/>
+        <Button Name="addTwenty" FontSize="30" Margin="5" Grid.Row="3" Grid.Column="1">
+            +
+        </Button>
+        <TextBlock Text="{Binding Path=twentyCount}" Name="twentyCount" Grid.Row="3" Grid.Column="2" Background="Gray" Margin="10"/>
+        <Button Name="subTwenty" FontSize="30" Margin="5" Grid.Row="3" Grid.Column="3">
+            -
+        </Button>
+        <TextBlock Text="0" Name="twentyDue" Grid.Row="3" Grid.Column="4" Background="Gray" Margin="10"/>
+
+        <TextBlock Text="$10" Name="tenBills" Grid.Row="4" Grid.Column="0" Background="LightGreen" Margin="5" TextAlignment="Center" Padding="8"/>
+        <Button Name="addTen" FontSize="30" Margin="5" Grid.Row="4" Grid.Column="1">
+            +
+        </Button>
+        <TextBlock Text="{Binding Path=tenCount}" Name="tensCount" Grid.Row="4" Grid.Column="2" Background="Gray" Margin="10"/>
+        <Button Name="subTen" FontSize="30" Margin="5" Grid.Row="4" Grid.Column="3">
+            -
+        </Button>
+        <TextBlock Text="0" Name="tenDue" Grid.Row="4" Grid.Column="4" Background="Gray" Margin="10"/>
+
+        <TextBlock Text="$5" Name="fivebills" Grid.Row="5" Grid.Column="0" Background="LightGreen" Margin="5" TextAlignment="Center" Padding="8"/>
+        <Button Name="addFive" FontSize="30" Margin="5" Grid.Row="5" Grid.Column="1">
+            +
+        </Button>
+        <TextBlock Text="{Binding Path=fiveCount}" Name="fivesCount" Grid.Row="5" Grid.Column="2" Background="Gray" Margin="10"/>
+        <Button Name="subFive" FontSize="30" Margin="5" Grid.Row="5" Grid.Column="3">
+            -
+        </Button>
+        <TextBlock Text="0" Name="fiveDue" Grid.Row="5" Grid.Column="4" Background="Gray" Margin="10"/>
+
+        <TextBlock Text="$2" Name="twoBills" Grid.Row="6" Grid.Column="0" Background="LightGreen" Margin="5" TextAlignment="Center" Padding="8"/>
+        <Button Name="addTwo" FontSize="30" Margin="5" Grid.Row="6" Grid.Column="1">
+            +
+        </Button>
+        <TextBlock Text="{Binding Path=twoCount}" Name="twosCount" Grid.Row="6" Grid.Column="2" Background="Gray" Margin="10"/>
+        <Button Name="subTwo" FontSize="30" Margin="5" Grid.Row="6" Grid.Column="3">
+            -
+        </Button>
+        <TextBlock Text="0" Name="twoDue" Grid.Row="6" Grid.Column="4" Background="Gray" Margin="10"/>
+
+        <TextBlock Text="$1" Name="oneBills" Grid.Row="7" Grid.Column="0" Background="LightGreen" Margin="5" TextAlignment="Center" Padding="8"/>
+        <Button Name="addOne" FontSize="30" Margin="5" Grid.Row="7" Grid.Column="1">
+            +
+        </Button>
+        <TextBlock Text="{Binding Path=oneCount}" Name="onesCount" Grid.Row="7" Grid.Column="2" Background="Gray" Margin="10"/>
+        <Button Name="subOne" FontSize="30" Margin="5" Grid.Row="7" Grid.Column="3">
+            -
+        </Button>
+        <TextBlock Text="0" Name="oneDue" Grid.Row="7" Grid.Column="4" Background="Gray" Margin="10"/>
+        <TextBlock Text="Give As Change" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2"/>
+        
+        
+        <TextBlock Text="From Customer" Grid.Row="0" Grid.Column="8" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Give as Change" Grid.Row="0" Grid.Column="10" Grid.ColumnSpan="2"/>
+
+        <TextBlock Text="$1" Name="dollarCoins" Grid.Row="1" Grid.Column="6" Background="LightGreen" Margin="5" TextAlignment="Center" Padding="8"/>
+        <Button Name="addDollar" FontSize="30" Margin="5" Grid.Row="1" Grid.Column="7">
+            +
+        </Button>
+        <TextBlock Text="{Binding Path=dollarCount}" Name="dollarCoinCount" Grid.Row="1" Grid.Column="8" Background="Gray" Margin="10"/>
+        <Button Name="subDollarCoin" FontSize="30" Margin="5" Grid.Row="1" Grid.Column="9">
+            -
+        </Button>
+        <TextBlock Text="0" Name="dollarCoinDue" Grid.Row="1" Grid.Column="10" Background="Gray" Margin="10"/>
+
+        <TextBlock Text="$0.50" Name="halfDollar" Grid.Row="2" Grid.Column="6" Background="LightGreen" Margin="5" TextAlignment="Center" Padding="8"/>
+        <Button Name="addHalfDollar" FontSize="30" Margin="5" Grid.Row="2" Grid.Column="7">
+            +
+        </Button>
+        <TextBlock Text="{Binding Path=halfDollarCount}" Name="halfDollarCount" Grid.Row="2" Grid.Column="8" Background="Gray" Margin="10"/>
+        <Button Name="subHalfDollar" FontSize="30" Margin="5" Grid.Row="2" Grid.Column="9">
+            -
+        </Button>
+        <TextBlock Text="0" Name="halfDollarDue" Grid.Row="2" Grid.Column="10" Background="Gray" Margin="10"/>
+
+        <TextBlock Text="$0.25" Name="quarters" Grid.Row="3" Grid.Column="6" Background="LightGreen" Margin="5" TextAlignment="Center" Padding="8"/>
+        <Button Name="addQuarter" FontSize="30" Margin="5" Grid.Row="3" Grid.Column="7">
+            +
+        </Button>
+        <TextBlock Text="{Binding Path=quarterCount}" Name="quarterCount" Grid.Row="3" Grid.Column="8" Background="Gray" Margin="10"/>
+        <Button Name="subQuarter" FontSize="30" Margin="5" Grid.Row="3" Grid.Column="9">
+            -
+        </Button>
+        <TextBlock Text="0" Name="quartersDue" Grid.Row="3" Grid.Column="10" Background="Gray" Margin="10"/>
+
+        <TextBlock Text="$0.10" Name="dimes" Grid.Row="4" Grid.Column="6" Background="LightGreen" Margin="5" TextAlignment="Center" Padding="8"/>
+        <Button Name="addDime" FontSize="30" Margin="5" Grid.Row="4" Grid.Column="7">
+            +
+        </Button>
+        <TextBlock Text="{Binding Path=dimeCount}" Name="dimesCount" Grid.Row="4" Grid.Column="8" Background="Gray" Margin="10"/>
+        <Button Name="subDime" FontSize="30" Margin="5" Grid.Row="4" Grid.Column="9">
+            -
+        </Button>
+        <TextBlock Text="0" Name="dimesDue" Grid.Row="4" Grid.Column="10" Background="Gray" Margin="10"/>
+
+        <TextBlock Text="$0.05" Name="nickels" Grid.Row="5" Grid.Column="6" Background="LightGreen" Margin="5" TextAlignment="Center" Padding="8"/>
+        <Button Name="addNickel" FontSize="30" Margin="5" Grid.Row="5" Grid.Column="7">
+            +
+        </Button>
+        <TextBlock Text="{Binding Path=nickleCount}" Name="nickleCount" Grid.Row="5" Grid.Column="8" Background="Gray" Margin="10"/>
+        <Button Name="subNickle" FontSize="30" Margin="5" Grid.Row="5" Grid.Column="9">
+            -
+        </Button>
+        <TextBlock Text="0" Name="nicklesDue" Grid.Row="5" Grid.Column="10" Background="Gray" Margin="10"/>
+
+        <TextBlock Text="$0.01" Name="pennies" Grid.Row="6" Grid.Column="6" Background="LightGreen" Margin="5" TextAlignment="Center" Padding="8"/>
+        <Button Name="addPenny" FontSize="30" Margin="5" Grid.Row="6" Grid.Column="7">
+            +
+        </Button>
+        <TextBlock Text="{Binding Path=pennyCount}" Name="penniesCount" Grid.Row="6" Grid.Column="8" Background="Gray" Margin="10"/>
+        <Button Name="subPenny" FontSize="30" Margin="5" Grid.Row="6" Grid.Column="9">
+            -
+        </Button>
+        <TextBlock Text="0" Name="penniesDue" Grid.Row="6" Grid.Column="10" Background="Gray" Margin="10"/>
+
+
+        <TextBlock Text="Total" Grid.Row="9" Grid.Column="0"/>
+        <TextBlock Text="Cash Due: " Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="2" Background="Red"/>
+        <TextBlock Text="Change Due: " Grid.Row="9" Grid.Column="8" Grid.ColumnSpan="2" Background="LightGreen"/>
+        <Button Grid.Row="8" Grid.Column="6" Grid.ColumnSpan="2" Margin="5" Name="finalizeSale" Click="finalizeSale_Click">
+            Finalize Sale
+        </Button>
+        <Button Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="2" Margin="5" Name="returnToOrder" Click="returnToOrder_Click">
+            Return To Order
+        </Button>
+    </Grid>
+</UserControl>

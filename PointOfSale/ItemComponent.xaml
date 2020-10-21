@@ -37,5 +37,6 @@
         <Button Click="AddOmlette" Name="gardenOrcOmlette" Grid.Row="4" Grid.Column="0">Garden Orc Omlette</Button>
         <Button Click="AddWater" Name="warriorWater" Grid.Row="4" Grid.Column="1">Warrior Water</Button>
         <Button Click="AddTBone" Name="thugsTBone" Grid.Row="5" Grid.Column="0">Thugs T Bone</Button>
+        <Button Click="AddCombo" Name="comboButton" Grid.Row="5" Grid.Column="2">Make Combo</Button>
     </Grid>
 </UserControl>

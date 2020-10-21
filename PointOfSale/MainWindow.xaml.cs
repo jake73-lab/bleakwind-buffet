@@ -19,7 +19,6 @@ using System.Windows.Shapes;
 using PointOfSale.Entrees;
 using PointOfSale.Drinks;
 using PointOfSale.Sides;
-using BleakwindBuffet.Data;
 
 namespace PointOfSale
 {
@@ -32,12 +31,15 @@ namespace PointOfSale
         public List<IOrderItem> order = new List<IOrderItem>();
         public ItemComponent items = new ItemComponent();
 
+        public static Border menuComponent;
+
         public MainWindow() 
         {
             InitializeComponent();
             items.Selection += HandleItem;
             menuContainer.Child = items;
             DataContext = orderContext;
+            menuComponent = menuContainer;
         }
 
         void HandleItem(object sender, SelectionHandler e)
@@ -65,6 +67,10 @@ namespace PointOfSale
                 if (e.item is MadOtarGrits) menuContainer.Child = new GritsCustomization(this);
                 if (e.item is DragonbornWaffleFries) menuContainer.Child = new FriesCustomization(this);
                 if (e.item is FriedMiraak) menuContainer.Child = new MiraakCustomization(this);
+            }
+            else
+            {
+                if (e.item is Combo) menuContainer.Child = new ComboInterface(this);
             }
         }
     }

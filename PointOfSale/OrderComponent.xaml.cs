@@ -36,6 +36,17 @@ namespace PointOfSale
 
         private void itemsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+        }
+
+        private void cancelOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.orderContext = new Order();
+        }
+
+        private void completeOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.menuComponent.Child = new PaymentComponent();
         }
     }
 }

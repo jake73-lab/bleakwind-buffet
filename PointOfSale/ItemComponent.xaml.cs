@@ -101,5 +101,10 @@ namespace PointOfSale
             Selection?.Invoke(this, new SelectionHandler() { item = new ThugsTBone() });
         }
 
+        void AddCombo(object sender, RoutedEventArgs e)
+        {
+            Selection?.Invoke(this, new SelectionHandler() { item = new Combo(null, null, null) });
+        }
+
     }
 }
