@@ -1,4 +1,4 @@
-﻿/*
+﻿  /*
  * Author: Jake Herman
  * Class name: SailorSoda.cs
  * Purpose: Class used to represent a Sailor Soda and handle sizes

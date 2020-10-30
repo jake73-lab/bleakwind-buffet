@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data
         {
         }
 
-        public IEnumerable<IOrderItem> Entrees()
+        public static IEnumerable<IOrderItem> Entrees()
         {
             List<IOrderItem> entree = new List<IOrderItem>();
             entree.Add(new BriarheartBurger());
@@ -26,7 +26,7 @@ namespace BleakwindBuffet.Data
             return entree;
         }
 
-        public IEnumerable<IOrderItem> Sides()
+        public static IEnumerable<IOrderItem> Sides()
         {
             List<IOrderItem> side = new List<IOrderItem>();
             foreach(Size size in (Size[]) Enum.GetValues(typeof(Size)))
@@ -60,7 +60,7 @@ namespace BleakwindBuffet.Data
             return side;
         }
 
-        public IEnumerable<IOrderItem> Drinks()
+        public static IEnumerable<IOrderItem> Drinks()
         {
             List<IOrderItem> drink = new List<IOrderItem>();
 
@@ -106,7 +106,7 @@ namespace BleakwindBuffet.Data
             return drink;
         }
 
-        public IEnumerable<IOrderItem> FullMenu()
+        public static IEnumerable<IOrderItem> FullMenu()
         {
             List<IOrderItem> fullMenu = new List<IOrderItem>();
             fullMenu.AddRange(Drinks());
