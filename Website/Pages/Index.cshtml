@@ -4,6 +4,44 @@
     ViewData["Title"] = "Home page";
 }
 
+<form id="menu-search">
+    <div id="search">
+        <input type="text" name="SearchTerms" value="item name" />
+        <input type="submit" value="Search">
+    </div>
+
+    <div id="filters">
+
+        <h4>Item Type</h4>
+        <label>
+            <input type="checkbox" name="Type" value="Entree" />
+        </label>
+        <label>
+            <input type="checkbox" name="Type" value="Side" />
+        </label> 
+        <label>
+            <input type="checkbox" name="Type" value="Drink" />
+        </label>
+
+        <h4>Price Range</h4>
+        <div>
+            Between
+            <input name="priceMin" type="number" min="0" max="10" step="0.1" placeholder="min" />
+            and
+            <input name="priceMax" type="number" min="0" max="10" step="0.1" placeholder="min" />
+        </div> 
+        
+        <h4>Calories Range</h4>
+        <div>
+            Between
+            <input name="calorieMin" type="number" min="0" max="10" step="1" placeholder="min" />
+            and
+            <input name="calorieMax" type="number" min="0" max="10" step="1" placeholder="min" />
+        </div>
+
+    </div>
+</form>
+
 <div class="text-center">
     <h1 class="display-4">Welcome to the Bleakwind Buffet</h1>
     <p>We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!.</p>

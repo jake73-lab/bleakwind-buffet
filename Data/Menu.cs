@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.IO;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Enums;
+using System.Xml;
 
 namespace BleakwindBuffet.Data
 {
@@ -113,6 +116,129 @@ namespace BleakwindBuffet.Data
             fullMenu.AddRange(Entrees());
             fullMenu.AddRange(Sides());
             return fullMenu;
+        }
+
+        public static IEnumerable<IOrderItem> Search(IEnumerable<IOrderItem> items, string terms)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            foreach(IOrderItem item in items)
+            {
+                if(item.ToString().Contains(terms))
+                {
+                    results.Add(item);
+                }
+            }
+
+            return results;
+        }
+
+        public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> items, IEnumerable<string> categories)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            foreach(string category in categories)
+            {
+                foreach(IOrderItem item in items)
+                {
+                    if (category.Equals("Entree"))
+                    {
+                        if (item is Entree)
+                        {
+                            results.Add(item);
+                        }
+                    }
+                    else if(category.Equals("Drink"))
+                    {
+                        if(item is Drink)
+                        {
+                            results.Add(item);
+                        }
+                    }
+                    else
+                    {
+                        if(item is Side)
+                        {
+                            results.Add(item);
+                        }
+                    }
+                }
+            }
+
+            return results;
+        }
+
+        public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> items, int? min, int? max)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            if (min == null && max == null) return items;
+            
+            if(min == null)
+            {
+                foreach(IOrderItem item in items)
+                {
+                    if (item.Price < max) results.Add(item);
+                }
+
+                return results;
+            }
+
+            if(max == null)
+            {
+                foreach(IOrderItem item in items)
+                {
+                    if (item.Price > min) results.Add(item);
+                }
+
+                return results;
+            }
+
+            foreach(IOrderItem item in items)
+            {
+                if(item.Price > min && item.Price < max)
+                {
+                    results.Add(item);
+                }
+            }
+
+            return results;
+        }
+        public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> items, int? min, int? max)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            if (min == null && max == null) return items;
+            
+            if(min == null)
+            {
+                foreach(IOrderItem item in items)
+                {
+                    if (item.Calories < max) results.Add(item);
+                }
+
+                return results;
+            }
+
+            if(max == null)
+            {
+                foreach(IOrderItem item in items)
+                {
+                    if (item.Calories > min) results.Add(item);
+                }
+
+                return results;
+            }
+
+            foreach(IOrderItem item in items)
+            {
+                if(item.Calories > min && item.Price < max)
+                {
+                    results.Add(item);
+                }
+            }
+
+            return results;
         }
     }
 }

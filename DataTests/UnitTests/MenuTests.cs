@@ -78,5 +78,34 @@ namespace BleakwindBuffet.DataTests.UnitTests
                 item => Assert.Contains("Medium Vokun Salad", item.ToString()),
                 item => Assert.Contains("Large Vokun Salad", item.ToString()));
         }
+
+        [Fact]
+        public void VerifySearchFunction()
+        {
+            IEnumerable<IOrderItem> results = Menu.Search(Menu.FullMenu(), "Briarheart");
+            Assert.Contains<IOrderItem>(new BriarheartBurger(), results);
+        }
+
+        [Fact]
+        public void VerifyCategoryFilter()
+        {
+            IEnumerable<string> choices = new List<string>() { "Entree" };
+            IEnumerable<IOrderItem> results = Menu.FilterByCategory(Menu.FullMenu(), choices);
+            Assert.Equal(Menu.Entrees(), results);
+        }
+
+        [Fact]
+        public void VerifyPriceFilter()
+        {
+            IEnumerable<IOrderItem> results = Menu.FilterByPrice(Menu.Entrees(), 0, 6);
+            Assert.Equal(results, new List<IOrderItem>() { new GardenOrcOmlette(), new SmokehouseSkeleton() });
+        }
+        
+        [Fact]
+        public void VerifyCalorieFilter()
+        {
+            IEnumerable<IOrderItem> results = Menu.FilterByCalories(Menu.Entrees(), 0, 750);
+            Assert.Equal(results, new List<IOrderItem>() { new BriarheartBurger(), new GardenOrcOmlette(), new SmokehouseSkeleton() });
+        }
     }
 }
