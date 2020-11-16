@@ -24,6 +24,8 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public uint Calories => 404;
 
+        public string Description = "Vegetarian. Two egg omelette packed with a mix of broccoli, mushrooms, and tomatoes. Topped with cheddar cheese.";
+
         private bool broccoli = true;
         /// <summary>
         /// public getter/setter flagging whether or not the omlette has broccoli in it

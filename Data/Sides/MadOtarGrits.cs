@@ -11,6 +11,8 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
+    public string Description = "Cheesey Grits.";
+
     /// <summary>
     /// class describing Mad Otar Grits
     /// </summary>

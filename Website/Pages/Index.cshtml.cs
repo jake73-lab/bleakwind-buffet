@@ -11,6 +11,8 @@ namespace Website.Pages
 {
     public class IndexModel : PageModel
     {
+        public IEnumerable<IOrderItem> items { get; protected set; };
+
         private readonly ILogger<IndexModel> _logger;
 
         public IndexModel(ILogger<IndexModel> logger)
@@ -42,9 +44,14 @@ namespace Website.Pages
             }
         }
 
-        public void OnGet()
+        public void OnGet(string Terms, string[] types, double priceMin, double priceMax, uint calorieMin, uint calorieMax)
         {
+            items = Menu.FullMenu();
 
+            if(Terms != null)
+            {
+                items = items.Where(item => item.ToString() != null && item.ToString().Contains(Terms));
+            }
         }
     }
 }

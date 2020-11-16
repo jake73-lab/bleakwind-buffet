@@ -24,6 +24,8 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public uint Calories => 784;
 
+        public string Description = "Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll.";
+
         private bool sirloin = true;
         /// <summary>
         /// public getter/setter flagging whether or not the philly contains sirloin

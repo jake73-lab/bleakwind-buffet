@@ -24,6 +24,8 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public uint Calories => 602;
 
+        public string Description = "Put some meat on those bones with a small stack of pancakes. Includes sausage links, eggs, and hash browns on the side. Topped with the syrup of your choice.";
+
         private bool sausageLink = true;
         /// <summary>
         /// public getter/setter flagging whether or not the smokehouse skeleton has a sausage link

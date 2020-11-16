@@ -16,6 +16,8 @@ namespace BleakwindBuffet.Data.Sides
     /// </summary>
     public class DragonbornWaffleFries : Side, INotifyPropertyChanged
     {
+        public string Description = "Crispy fried potato waffle fries.";
+
         private Size size = Size.Small;
         /// <summary>
         /// public getter/setter for the size of the fries

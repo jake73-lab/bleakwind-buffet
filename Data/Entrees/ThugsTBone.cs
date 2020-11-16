@@ -26,6 +26,8 @@ namespace BleakwindBuffet.Data.Entrees
 
         private List<String> specialInstructions = new List<string>();
 
+        public string Description = "Juicy T-Bone, not much else to say.";
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>

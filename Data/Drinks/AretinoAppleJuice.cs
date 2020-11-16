@@ -7,6 +7,8 @@ namespace BleakwindBuffet.Data.Drinks
 {
     public class AretinoAppleJuice : Drink, INotifyPropertyChanged
     {
+        public string Description = " Fresh squeezed apple juice.";
+
         private Size size = Size.Small;
         /// <summary>
         /// public getter/setter for size of apple juice

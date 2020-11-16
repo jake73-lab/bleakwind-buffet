@@ -11,6 +11,8 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    public string Description = "Fair trade, fresh ground dark roast coffee.";
+
     /// <summary>
     /// Class to represent Candlehearth Coffee
     /// </summary>

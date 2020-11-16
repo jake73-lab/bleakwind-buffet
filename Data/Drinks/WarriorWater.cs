@@ -16,6 +16,8 @@ namespace BleakwindBuffet.Data.Drinks
     /// </summary>
     public class WarriorWater : Drink, INotifyPropertyChanged
     {
+        public string Description = "It’s water. Just water.";
+
         private Size size = Size.Small;
         /// <summary>
         /// public getter/setter for the water's size

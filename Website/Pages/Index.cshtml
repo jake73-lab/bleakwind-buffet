@@ -45,12 +45,8 @@
 <div class="text-center">
     <h1 class="display-4">Welcome to the Bleakwind Buffet</h1>
     <p>We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!.</p>
-    <ul>
-        <li>
-            <h2>Combo Meals</h2>
-            <p>a combo meal with an Entree, Drink, and Side can be made for a dollar discount</p>
-        </li>
-        <li>
+    <div class="flex-columns">
+        <div>
             <h2>Entrees</h2>
             @foreach(BleakwindBuffet.Data.IOrderItem entree in @Model.Entrees)
             {
@@ -58,10 +54,11 @@
                     <h4 class="name">@entree.ToString()</h4>
                     <p class="price">@entree.Price</p>
                     <p class="calories">@entree.Calories</p>
+                    <p class="desc">@entree.Description</p>
                 </div>
             }
-        </li>
-        <li>
+        </div>
+        <div>
             <h2>Sides</h2>
             @foreach (BleakwindBuffet.Data.IOrderItem side in @Model.Sides)
             {
@@ -69,10 +66,11 @@
                     <h4 class="name">@side.ToString()</h4>
                     <p class="price">@side.Price</p>
                     <p class="calories">@side.Calories</p>
+                    <p class="desc">@side.Description</p>
                 </div>
             }
-        </li>
-        <li>
+        </div>
+        <div>
             <h2>Drinks</h2>
             @foreach (BleakwindBuffet.Data.IOrderItem drink in @Model.Drinks)
             {
@@ -80,8 +78,9 @@
                     <h4 class="name">@drink.ToString()</h4>
                     <p class="price">@drink.Price</p>
                     <p class="calories">@drink.Calories</p>
+                    <p class="desc">@drink.Description</p>
                 </div>
             }
-        </li>
-    </ul>
+        </div>
+    </div>
 </div>
